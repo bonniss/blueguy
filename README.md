@@ -1,4 +1,4 @@
-# Blueguy - Tài liệu hướng dẫn tùy biến sinh code từ JHipster
+# Blueguy - Tài liệu hướng dẫn tùy biến code sinh từ JHipster
 
 [x] Yeoman
 [x] JHipster

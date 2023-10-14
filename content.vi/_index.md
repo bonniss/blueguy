@@ -1,9 +1,9 @@
 ---
-title: "Tài liệu hướng dẫn tùy biến sinh code từ JHipster"
+title: "Tài liệu hướng dẫn tùy biến code sinh từ JHipster"
 type: docs
 ---
 
-# Tài liệu hướng dẫn tùy biến sinh code từ JHipster
+# Tài liệu hướng dẫn tùy biến code sinh từ JHipster
 
 ## Mục tiêu
 
