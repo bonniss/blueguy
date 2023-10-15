@@ -1,9 +1,9 @@
 # Blueguy - Tài liệu hướng dẫn tùy biến code sinh từ JHipster
 
-<center>
-<img width="150" src="https://raw.githubusercontent.com/bonniss/blueguy/main/static/logo.png">
+<p style="text-align:center;">
+<img width="250" src="https://raw.githubusercontent.com/bonniss/blueguy/main/static/logo.png">
 </img>
-</center>
+</p>
 
 [x] Yeoman
 [x] JHipster
