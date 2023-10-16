@@ -63,7 +63,7 @@ generators.Base.extend({
 });
 ```
 
-## Sử dụng tool khác
+## Tool khác
 
 Yeoman đơn giản hóa việc `spawn` bất cứ lệnh CLI nào, bất kể trên Windows, Linux hay MacOS.
 
