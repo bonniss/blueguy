@@ -5,6 +5,13 @@ type: docs
 
 # Tài liệu hướng dẫn tùy biến code sinh từ JHipster
 
+<figure style="text-align:center;margin:1.5rem 0;">
+  <img
+    src="/logo.png"
+    width="150"/>
+  <figcaption style="color:#4189c6;font-weight:bold;">Blueguy</figcaption>
+</figure>
+
 ## Mục tiêu
 
 - Hiểu kiến trúc của bộ sinh code JHipster
