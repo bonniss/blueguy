@@ -67,7 +67,7 @@ generators.Base.extend({
 
 Yeoman đơn giản hóa việc `spawn` bất cứ lệnh CLI nào, bất kể trên Windows, Linux hay MacOS.
 
-Chẳng hạn, nếu bạn là đang sinh code PHP, và muốn cài đặt dependencies sử dụng `composer`:
+Bạn đang sinh code PHP và muốn cài đặt dependencies sử dụng `composer`:
 
 ```js
 class extends Generator {
