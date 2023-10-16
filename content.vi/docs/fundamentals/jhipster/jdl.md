@@ -121,7 +121,7 @@ Tài liệu này đi theo hướng sinh code thông qua cấu hình JDL.
 
 ### JDL mẫu
 
-JHipster cung cấp repo [jdl-samples](https://github.com/jhipster/jdl-samples) có sẵn các file JDL mẫu từ monolith đến microservice. Người dùng có thể sinh code từ JDL mẫu bằng cách gọi đúng tên file mà không cần tải file về. JHipster nếu không tìm thấy file ở thư mục hiện tại sẽ tự động tìm và tải về từ [jdl-samples].
+JHipster cung cấp repo [jdl-samples](https://github.com/jhipster/jdl-samples) có sẵn các file JDL mẫu từ monolith đến microservice. Người dùng có thể sinh code từ JDL mẫu bằng cách gọi đúng tên file mà không cần tải file về. JHipster nếu không tìm thấy file ở thư mục hiện tại sẽ tự động tìm và tải về từ [jdl-samples](https://github.com/jhipster/jdl-samples).
 
 ```sh
 $ jhipster jdl 21-points.jh
