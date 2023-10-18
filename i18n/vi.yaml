@@ -1,0 +1,14 @@
+- id: Search
+  translation: Tìm kiếm
+
+- id: Edit this page
+  translation: Sửa trang này
+
+- id: Last modified by
+  translation: Sửa lần cuối bởi
+
+- id: Expand
+  translation: Mở rộng
+
+- id: bookSearchConfig
+  translation: '{ cache: true }'
