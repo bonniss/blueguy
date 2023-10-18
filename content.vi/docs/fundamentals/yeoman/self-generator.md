@@ -109,8 +109,6 @@ Bạn tùy ý thay đổi cấu trúc thư mục như ý, chỉ nhớ là hãy c
 
 ### Logic chính
 
-Yeoman offers a base generator which you can extend to implement your own behavior. This base generator will add most of the functionalities you’d expect to ease your task.
-
 Yeoman cung cấp sẵn một class có vai trò base generator, có sẵn hầu hết các tính năng mà bạn có thể mở rộng để thực thi các task thường gặp.
 
 ```js
