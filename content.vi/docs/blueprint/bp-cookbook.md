@@ -44,10 +44,10 @@ Với blueprint chưa xuất bản lên NPM, hoặc blueprint riêng tư chỉ c
 
 `npm` cho phép liên kết package local để sử dụng như một NPM package global, tại thư mục của blueprint, gọi [`npm link`](https://docs.npmjs.com/cli/v10/commands/npm-link) để tạo liên kết.
 
-Bước 2 thì không có gì khác:
+Bước 2 có một điểm khác: tùy chọn `--skip-jhipster-dependencies` là cần thiết để JHipster không thêm blueprint đang phát triển vào `dependencies` của code sinh ra:
 
 ```sh
-jhipster --blueprints my-local-blueprint
+jhipster --blueprints my-local-blueprint --skip-jhipster-dependencies
 ```
 
 ## Blueprint có CLI riêng

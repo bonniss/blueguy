@@ -96,6 +96,26 @@ Do JHipster là một generator Yeoman, bạn có thể sử dụng thêm tùy c
 jhipster --force
 ```
 
+## Kịch bản kết hợp
+
+> Kịch bản 1: Sinh code java bằng trả lời câu hỏi, không sinh dữ liệu giả, không sinh repo git.
+
+```sh
+jhipster \
+--skip-client \
+--skip-fake-data \
+--skip-git
+```
+
+> Kịch bản 2: Sinh code phía client từ jdl mẫu [`21-points.jh`](https://github.com/jhipster/jdl-samples/blob/v8/21-points.jh), không tự động cài đặt dependencies.
+
+```sh
+jhipster \
+jdl 21-points.jh \
+--skip-server \
+--skip-install \
+```
+
 ## Tham khảo
 
 - [[JHipster] Creating an application](https://www.jhipster.tech/creating-an-app)
