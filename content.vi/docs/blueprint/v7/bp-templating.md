@@ -6,9 +6,13 @@ title: "Xử lý biểu mẫu"
 # Xử lý biểu mẫu
 
 {{< hint warning >}}
+**Phiên bản JHipster: 7.9.4**
+{{< /hint >}}
+
+{{< hint warning >}}
 **Lưu ý**
 
-Bạn cần hoàn thành bài ["Bắt đầu phát triển"](/docs/blueprint/bp-start) trước khi thực hành bài này.
+Bạn cần hoàn thành bài ["Bắt đầu phát triển"](/docs/v7/blueprint/bp-start) trước khi thực hành bài này.
 {{< /hint >}}
 
 {{< hint info >}}

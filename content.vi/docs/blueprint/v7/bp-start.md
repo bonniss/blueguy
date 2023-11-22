@@ -5,6 +5,10 @@ title: "Bắt đầu phát triển"
 
 # Bắt đầu phát triển
 
+{{< hint warning >}}
+**Phiên bản JHipster: 7.9.4**
+{{< /hint >}}
+
 ## Tạo mới blueprint
 
 ```sh
@@ -239,7 +243,7 @@ npm install
 ## Liên kết blueprint
 
 {{< hint info >}}
-Xem lại [bí kíp sử dụng blueprint](/docs/blueprint/bp-cookbook)
+Xem lại [bí kíp sử dụng blueprint](/docs/v7/blueprint/bp-cookbook)
 {{< /hint >}}
 
 Tại thư mục gốc của blueprint:
@@ -330,11 +334,25 @@ Nếu bạn đi được tới đây thì __xin chúc mừng, bạn đã tạo t
 
 ## Cài đặt `lodash` (tùy chọn)
 
-Lodash là thư viện hàm tiện ích đã quá nổi tiếng trong thế giới Javascript.
+[Lodash](https://lodash.com/) là thư viện hàm tiện ích đã quá nổi tiếng trong thế giới Javascript.
 
 ```sh
 npm install lodash
 ```
+
+Một số hàm tiện ích `lodash` toả sáng khi làm biểu mẫu:
+
+- Đọc và ghi object nhiều tầng:
+  - `_.get`
+  - `_.set`
+- Chuyển đổi loại ký tự như tên biến theo quy ước các ngôn ngữ lập trình:
+  - `_.upperFirst`
+  - `_.camelCase`
+  - `_.snakeCase`
+- Thao tác biến đổi object:
+  - `_.omit`
+  - `_.pick`
+
 
 ## Tham khảo
 

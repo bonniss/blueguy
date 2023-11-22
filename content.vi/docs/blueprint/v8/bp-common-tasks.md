@@ -5,6 +5,10 @@ title: "Tác vụ thường dùng"
 
 # Tác vụ thường dùng
 
+{{< hint warning >}}
+**Phiên bản JHipster: 8.0.0**
+{{< /hint >}}
+
 {{< hint info >}}
 Xem lại ["Làm việc với filesystem"](/docs/fundamentals/yeoman/filesystem) trong Yeoman.
 {{< /hint >}}

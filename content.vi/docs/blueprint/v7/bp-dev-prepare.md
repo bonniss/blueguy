@@ -5,6 +5,10 @@ title: "Chuẩn bị phát triển"
 
 # Chuẩn bị phát triển
 
+{{< hint warning >}}
+**Phiên bản JHipster: 7.9.4**
+{{< /hint >}}
+
 ## Mã nguồn JHipster
 
 Khi có ý định tùy biến code, bạn cần khoanh vùng xem cần tác động đến các sub-generator nào trong [`generator-jhipster`](https://github.com/jhipster/generator-jhipster) để sinh được code như ý muốn. Do đó bạn cần clone [`generator-jhipster`](https://github.com/jhipster/generator-jhipster) về máy để:

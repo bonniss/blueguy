@@ -7,30 +7,9 @@ title: "Blueprint v7"
 
 # Giới thiệu về Blueprint v7
 
-JHipster được thiết kế để mở rộng được bằng plugin. Trước bản 7.9.0, plugin chia làm 2 loại:
-
-- `module`
-- `blueprint`
-
-Từ bản 7.9.0 trở đi, `module` được thay đổi thành một loại `blueprint` độc lập (standalone) với CLI riêng biệt, nên từ giờ khi cần mở rộng/tùy biến JHipster, _ta chỉ cần quan tâm đến `blueprint`_.
-
-Blueprint trong JHipster có các đặc điểm sau:
-
-- Node.js package, nếu được xuất bản là một NPM package
-- Yeoman generator
-- Tên repo bắt đầu bằng tiền tố `generator-jhipster`
-- Mục `keywords` trong `package.json` có 2 phần tử
-
-```json
-{
-  "keywords": [
-    "yeoman-generator",
-    "jhipster-blueprint"
-  ]
-}
-```
-
-thay vì chỉ mỗi `yeoman-generator` như generator thông thường.
+{{< hint warning >}}
+**Phiên bản JHipster: 7.9.4**
+{{< /hint >}}
 
 Trong `generator-jhipster`, mỗi thành viên trong `generators` đều là một blueprint.
 

@@ -5,6 +5,9 @@ type: docs
 
 # Tài liệu hướng dẫn tùy biến code sinh từ JHipster
 
+![](https://img.shields.io/github/stars/bonniss/blueguy)
+![](https://img.shields.io/github/forks/bonniss/blueguy)
+
 <figure style="text-align:center;margin:1.5rem 0;">
   <img
     src="/logo.png"

@@ -5,6 +5,10 @@ title: "Chuẩn bị phát triển"
 
 # Chuẩn bị phát triển
 
+{{< hint warning >}}
+**Phiên bản JHipster: 8.0.0**
+{{< /hint >}}
+
 ## Mã nguồn JHipster
 
 Khi có ý định tùy biến code, bạn cần khoanh vùng xem cần tác động đến các sub-generator nào trong [`generator-jhipster`](https://github.com/jhipster/generator-jhipster) để sinh được code như ý muốn. Do đó bạn cần clone [`generator-jhipster`](https://github.com/jhipster/generator-jhipster) về máy để:
@@ -15,40 +19,38 @@ Khi có ý định tùy biến code, bạn cần khoanh vùng xem cần tác đ�
 {{< hint warning >}}
 **Ghi nhớ**
 
-Bạn phải checkout đến đúng tag release tương ứng với phiên bản JHipster đang cài ở máy. Tài liệu này đang dùng bản 7.9.4.
+Bạn phải checkout đến đúng tag release tương ứng với phiên bản JHipster đang cài ở máy.
 {{< /hint >}}
 
 ## Nguyên lý sub-generator
 
+Kiến trúc và tên gọi class của v8 có nhiều thay đổi so với v7, đáng chú ý là _mọi blueprint sẽ kế thừa từ lớp `BaseApplicationGenerator` chứ không phải từ lớp của sub-generator gốc như v7_.
+
 {{< mermaid class="text-center" >}}
 flowchart LR
   subgraph JHipster
-    PrivateBase --> YeomanGenerator
-    BaseGenerator --> PrivateBase
-    BaseBlueprintGenerator --> BaseGenerator
+    CoreGenerator --> YeomanGenerator
+    BaseGenerator --> CoreGenerator
+    BaseApplicationGenerator --> BaseGenerator
 
-    AppGenerator --> BaseBlueprintGenerator
-    AwsClientGenerator --> BaseBlueprintGenerator
-    AzureAppServiceGenerator --> BaseBlueprintGenerator
-    SpringServiceGenerator --> BaseBlueprintGenerator
-    OpenApiClientGenerator --> BaseBlueprintGenerator
-    HerokuGenerator --> BaseBlueprintGenerator
+    CypressGenerator --> BaseApplicationGenerator
+    AngularGenerator --> BaseApplicationGenerator
+    VueGenerator --> BaseApplicationGenerator
+    HerokuGenerator --> BaseApplicationGenerator
 
-    ClientGenerator --> BaseBlueprintGenerator
-    EntityClientGenerator --> BaseBlueprintGenerator
-    ServerGenerator --> BaseBlueprintGenerator
-    EntityServerGenerator --> BaseBlueprintGenerator
-    LanguagesGenerator --> BaseBlueprintGenerator
-    EntityI18nGenerator --> BaseBlueprintGenerator
+    ClientGenerator --> BaseApplicationGenerator
+    ReactGenerator --> BaseApplicationGenerator
+    LanguagesGenerator --> BaseApplicationGenerator
+    ServerGenerator --> BaseApplicationGenerator
+    JavaGenerator --> BaseApplicationGenerator
   end
 
   subgraph MyBlueprint
-    MyClientGenerator --> ClientGenerator
-    MyEntityClientGenerator --> EntityClientGenerator
-    MyServerGenerator --> ServerGenerator
-    MyEntityServerGenerator --> EntityServerGenerator
-    MyLanguagesGenerator --> LanguagesGenerator
-    MyEntityI18nGenerator --> EntityI18nGenerator
+    MyClientGenerator --> BaseApplicationGenerator
+    MyReactGenerator --> BaseApplicationGenerator
+    MyLanguagesGenerator --> BaseApplicationGenerator
+    MyServerGenerator --> BaseApplicationGenerator
+    MyJavaGenerator --> BaseApplicationGenerator
   end
 {{< /mermaid >}}
 
@@ -99,24 +101,33 @@ Lớp con của `BaseGenerator` và là lớp cha trực tiếp của mọi sub-
 Xem lại [priority](/docs/fundamentals/yeoman/method-priority.md) trong Yeoman.
 {{< /hint >}}
 
-JHipster mở rộng số hàng đợi ưu tiên so với Yeoman.
+v8 mở rộng lên 21 tầng so với 12 tầng trong v7.
 
 {{< mermaid class="text-center" >}}
 flowchart TD
-  INI["**initializing**"]
-  PRO["**prompting**"]
-  CON["**configuring**"]
-  COM["**composing**"]
-  LOA["**loading**"]
-  PRE["**preparing**"]
-  DEF["**default**"]
-  WRI["**writing**"]
-  POW["**postWriting**"]
-  INS["**install**"]
-  POI["**postInstall**"]
-  END["**end**"]
+  INI1["**initializing**"]
+  PRO2["**prompting**"]
+  CON3["**configuring**"]
+  COM4["**composing**"]
+  LOA5["**loading**"]
+  PRE6["**preparing**"]
+  CON7["**configuringEachEntity**"]
+  LOA8["**loadingEntities**"]
+  PRE9["**preparingEachEntity**"]
+  PRE101["**preparingEachEntityField**"]
+  PRE111["**preparingEachEntityRelationship**"]
+  POS121["**postPreparingEachEntity**"]
+  DEF131["**default**"]
+  WRI141["**writing**"]
+  WRI151["**writingEntities**"]
+  POS161["**postWriting**"]
+  POS171["**postWritingEntities**"]
+  LOA181["**loadingTranslations**"]
+  INS191["**install**"]
+  POS202["**postInstall**"]
+  END212["**end**"]
 
   subgraph JHipster priorities in Run loop
-    INI --> PRO --> CON --> COM --> LOA --> PRE --> DEF --> WRI --> POW --> INS --> POI --> END
+    INI1 --> PRO2 --> CON3 --> COM4 --> LOA5 --> PRE6 --> CON7 --> LOA8 --> PRE9 --> PRE101 --> PRE111 --> POS121 --> DEF131 --> WRI141 --> WRI151 --> POS161 --> POS171 --> LOA181 --> INS191 --> POS202 --> END212
   end
 {{< /mermaid >}}

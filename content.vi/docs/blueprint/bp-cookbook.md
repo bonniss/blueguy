@@ -16,15 +16,15 @@ title: "Bí kíp sử dụng blueprint"
 jhipster --blueprints <blueprint_name>
 ```
 
-Dĩ nhiên, bạn thoải mái kết hợp với các tùy chọn khác:
+Dĩ nhiên, bạn thoải mái kết hợp với các [tùy chọn khác](/docs/fundamentals/jhipster/jh-cookbook.md):
 
 ```sh
 jhipster jdl ./app.jdl --blueprints <blueprint_name> --skip-client --skip-install
 ```
 
-## Blueprint có trên NPM
+## Blueprint đã xuất bản trên NPM
 
-Nếu blueprint đã được xuất bản lên NPM, cài đặt blueprint với scope global bằng `npm` hoặc `yarn`, ví dụ với blueprint chính thức [`entity-audit`](https://github.com/jhipster/generator-jhipster-entity-audit):
+Cài đặt package blueprint với scope global bằng `npm` hoặc `yarn`, ví dụ với blueprint chính thức [`entity-audit`](https://github.com/jhipster/generator-jhipster-entity-audit):
 
 ```sh
 npm install -g generator-jhipster-entity-audit
