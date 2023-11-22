@@ -72,12 +72,12 @@ get initializing() {
 }
 ```
 
-## Tùy biến `package.json`
+## Mở rộng `package.json`
 
-Sử dụng [`this.packageJson`](https://yeoman.github.io/generator/Generator.html#packageJson) ta có thể mở rộng bất kỳ giá trị nào trong `package.json`. Ở tầng `postWriting`:
+Method tiện ích [`this.packageJson.merge`](https://yeoman.github.io/generator/Generator.html#packageJson) cho phép mở rộng bất kỳ giá trị nào trong `package.json`. Ở tầng `postWriting`:
 
 ```js
-get [POST_WRITING_PRIORITY]() {
+get [BaseApplicationGenerator.POST_WRITING_PRIORITY]() {
   return {
     async modifyPackageJson() {
       this.packageJson.merge({
@@ -97,6 +97,38 @@ get [POST_WRITING_PRIORITY]() {
       });
     },
   }
+}
+```
+
+## Xoá nội dung `package.json`
+
+`this.packageJson` về bản chất là một [Yeoman Storage](/docs/fundamentals/yeoman/yeoman-storage).
+
+```js
+get [BaseApplicationGenerator.POST_WRITING]() {
+  return {
+    async removeDepsPackageJson() {
+      // 1. Đọc JSON vào một object
+      const json = this.packageJson.getAll();
+
+      // 2. Xoá các key mong muốn
+      const depsToRemove = {
+        dependencies: ['@fortawesome/fontawesome-svg-core', '@fortawesome/free-solid-svg-icons', '@fortawesome/react-fontawesome'],
+        devDependencies: [],
+      };
+      Object.keys(depsToRemove).forEach(ns => {
+        const items = depsToRemove[ns];
+        // eslint-disable-next-line no-unused-expressions
+        Array.isArray(items) &&
+          items.forEach(x => {
+            _.unset(json, `${ns}.${x}`);
+          });
+      });
+
+      // 3. Lưu object kết quả xuống file JSON
+      this.packageJson.writeContent(json);
+    },
+  };
 }
 ```
 

@@ -9,7 +9,7 @@ Chia sẻ cấu hình chung giữa các generator là một tác vụ phổ bi�
 
 Các cấu hình này được lưu trong file `.yo-rc.json` thông qua [API Yeoman Storage](https://yeoman.github.io/generator/Storage.html) tại `this.config`.
 
-## Method thường dùng
+## Tác vụ thường dùng của Yeoman Storage
 
 ### `this.config.save()`
 

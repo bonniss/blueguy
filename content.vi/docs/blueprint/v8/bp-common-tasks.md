@@ -18,7 +18,7 @@ Xem lại ["Làm việc với filesystem"](/docs/fundamentals/yeoman/filesystem)
 ### Giữ nguyên hành vi của sub-generator cha
 
 ```js
-get [Generator.INITIALIZING]() {
+get [BaseApplicationGenerator.INITIALIZING]() {
   return super.initializing;
 }
 ```
@@ -26,7 +26,7 @@ get [Generator.INITIALIZING]() {
 ### Override hoàn toàn sub-generator cha
 
 ```js
-get [Generator.INITIALIZING]() {
+get [BaseApplicationGenerator.INITIALIZING]() {
   return {
     myCustomInitPriorityStep() {
       // Do all your stuff here
@@ -41,7 +41,7 @@ get [Generator.INITIALIZING]() {
 ### Override một phần sub-generator cha
 
 ```js
-get [Generator.INITIALIZING]() {
+get [BaseApplicationGenerator.INITIALIZING]() {
   return {
     ...super._initializing(),
     displayLogo() {
@@ -72,12 +72,12 @@ get initializing() {
 }
 ```
 
-## Tùy biến `package.json`
+## Mở rộng `package.json`
 
-Sử dụng [`this.packageJson`](https://yeoman.github.io/generator/Generator.html#packageJson) ta có thể mở rộng bất kỳ giá trị nào trong `package.json`. Ở tầng `postWriting`:
+Method tiện ích [`this.packageJson.merge`](https://yeoman.github.io/generator/Generator.html#packageJson) cho phép mở rộng bất kỳ giá trị nào trong `package.json`. Ở tầng `postWriting`:
 
 ```js
-get [POST_WRITING_PRIORITY]() {
+get [BaseApplicationGenerator.POST_WRITING_PRIORITY]() {
   return {
     async modifyPackageJson() {
       this.packageJson.merge({
@@ -100,10 +100,42 @@ get [POST_WRITING_PRIORITY]() {
 }
 ```
 
+## Xoá nội dung `package.json`
+
+`this.packageJson` về bản chất là một [Yeoman Storage](/docs/fundamentals/yeoman/yeoman-storage).
+
+```js
+get [BaseApplicationGenerator.POST_WRITING]() {
+  return this.asPostWritingTaskGroup({
+    async removeDepsPackageJson() {
+      // 1. Đọc JSON vào một object
+      const json = this.packageJson.getAll();
+
+      // 2. Xoá các key mong muốn
+      const depsToRemove = {
+        dependencies: ['@fortawesome/fontawesome-svg-core', '@fortawesome/free-solid-svg-icons', '@fortawesome/react-fontawesome'],
+        devDependencies: [],
+      };
+      Object.keys(depsToRemove).forEach(ns => {
+        const items = depsToRemove[ns];
+        // eslint-disable-next-line no-unused-expressions
+        Array.isArray(items) &&
+          items.forEach(x => {
+            _.unset(json, `${ns}.${x}`);
+          });
+      });
+
+      // 3. Lưu object kết quả xuống file JSON
+      this.packageJson.writeContent(json);
+    },
+  });
+}
+```
+
 ## Sao chép thư mục
 
 ```js
-get [POST_WRITING_PRIORITY]() {
+get [BaseApplicationGenerator.POST_WRITING_PRIORITY]() {
   return {
     async addFolderComponents() {
       await this.fs.copy(
@@ -118,7 +150,7 @@ get [POST_WRITING_PRIORITY]() {
 ## Sao chép file
 
 ```js
-get [POST_WRITING_PRIORITY]() {
+get [BaseApplicationGenerator.POST_WRITING_PRIORITY]() {
   return {
     async addSharedTemplates() {
       await this.copyTemplate(
@@ -133,7 +165,7 @@ get [POST_WRITING_PRIORITY]() {
 ## Thay thế nội dung file
 
 ```js
-get [POST_WRITING_PRIORITY]() {
+get [BaseApplicationGenerator.POST_WRITING_PRIORITY]() {
   return {
     async addSharedTemplates() {
       async cleanEntitiesMenu() {
@@ -147,7 +179,7 @@ get [POST_WRITING_PRIORITY]() {
 ## Xóa file
 
 ```js
-get [POST_WRITING_PRIORITY]() {
+get [BaseApplicationGenerator.POST_WRITING_PRIORITY]() {
   return {
     async removeScssFiles() {
       this.deleteDestination('src/main/webapp/app/shared/layout/header/header.scss');
