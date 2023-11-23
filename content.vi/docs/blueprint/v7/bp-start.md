@@ -243,7 +243,7 @@ npm install
 ## Liên kết blueprint
 
 {{< hint info >}}
-Xem lại [bí kíp sử dụng blueprint](/docs/v7/blueprint/bp-cookbook)
+Xem lại [bí kíp sử dụng blueprint](/docs/blueprint/v7/bp-cookbook)
 {{< /hint >}}
 
 Tại thư mục gốc của blueprint:

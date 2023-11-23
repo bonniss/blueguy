@@ -277,7 +277,7 @@ Mỗi sub-generator đều có `templates` tương ứng với 1 file rỗng nh�
 ## Liên kết blueprint
 
 {{< hint info >}}
-Xem lại [bí kíp sử dụng blueprint](/docs/v8/blueprint/bp-cookbook)
+Xem lại [bí kíp sử dụng blueprint](/docs/blueprint/v8/bp-cookbook)
 {{< /hint >}}
 
 Tại thư mục gốc của blueprint:

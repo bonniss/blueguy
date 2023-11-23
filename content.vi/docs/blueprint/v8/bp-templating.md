@@ -12,7 +12,7 @@ title: "Xử lý biểu mẫu"
 {{< hint warning >}}
 **Lưu ý**
 
-Bạn cần hoàn thành bài ["Bắt đầu phát triển"](/docs/v8/blueprint/bp-start) trước khi thực hành bài này.
+Bạn cần hoàn thành bài ["Bắt đầu phát triển"](/docs/blueprint/v8/bp-start) trước khi thực hành bài này.
 {{< /hint >}}
 
 {{< hint info >}}
