@@ -26,33 +26,9 @@ Slide giới thiệu JHipster:
 - [Các công ty sử dụng JHipster](https://www.jhipster.tech/companies-using-jhipster/)
 - [Showcase](https://www.jhipster.tech/showcase/)
 
-## Cài đặt JHipster
+## Tài liệu chính thức JHipster
 
-Theo [hướng dẫn chính thức từ trang chủ](https://www.jhipster.tech/installation/), để làm việc với JHipster có 3 cách:
+JHipster được cập nhật liên tục, tài liệu chính thức cũng cập nhật tương ứng.
 
-1. Cho người dùng muốn thử nghiệm: [JHipster online](https://start.jhipster.tech/) là một trang dựng cấu hình low-code kiểu như [Spring initializr](https://start.spring.io/).
-1. Cho người dùng phổ thông: cài đặt môi trường ở máy cá nhân
-1. Cho người dùng nâng cao: cài đặt môi trường bằng Docker
-
-Người đọc tài liệu này sẽ làm việc với blueprint, do đó ta dùng cách 2.
-
-1. Cài Java 11 [Eclipse Temurin builds](https://adoptium.net/temurin/releases/?version=11)
-1. Cài Node.js LTS >= 14
-1. Cài JHipster: `npm install -g generator-jhipster`
-1. Cài Yeoman: `npm install -g yo`
-
-Kiểm tra cài đặt.
-
-```sh
-$ java -version
-openjdk version "11.0.20.1" 2023-08-24
-OpenJDK Runtime Environment Temurin-11.0.20.1+1 (build 11.0.20.1+1)
-OpenJDK Client VM Temurin-11.0.20.1+1 (build 11.0.20.1+1, mixed mode)
-
-$ jhipster --version
-INFO! Using bundled JHipster
-7.9.4
-
-$ yo --version
-4.3.1
-```
+- [Tài liệu chính thức mới nhất](https://www.jhipster.tech/)
+- [Lịch sử phiên bản tài liệu](https://www.jhipster.tech/documentation-archive/).

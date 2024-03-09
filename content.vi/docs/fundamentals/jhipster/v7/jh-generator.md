@@ -1,5 +1,5 @@
 ---
-weight: 1
+weight: 5
 title: "Kiến trúc bộ sinh code"
 ---
 
