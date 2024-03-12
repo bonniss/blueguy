@@ -22,7 +22,7 @@ JHipster online chỉ giúp sinh code cho ứng dụng bằng một giao diện 
 Người đọc tài liệu này sẽ làm việc với blueprint, do đó ta dùng cách 2.
 
 1. Cài Java 17 hoặc 21 [Eclipse Temurin builds](https://adoptium.net/temurin/releases)
-1. Cài Node.js LTS >= 14
+1. Cài Node.js LTS >= 18
 1. Cài JHipster: `npm install -g generator-jhipster`
 1. Cài Yeoman: `npm install -g yo`
 
