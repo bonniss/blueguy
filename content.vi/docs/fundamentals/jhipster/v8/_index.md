@@ -43,7 +43,7 @@ $ yo --version
 
 Khi `jhipster` đã được cài đặt, hiển thị tổng hợp thông tin môi trường phát triển:
 
-```sh
+~~~sh
 $ jhipster info
 
         ██╗ ██╗   ██╗ ████████╗ ███████╗   ██████╗ ████████╗ ████████╗ ███████╗
@@ -85,8 +85,7 @@ Congratulations, JHipster execution is complete!
 If you find JHipster useful consider sponsoring the project https://www.jhipster.tech/sponsors/
 
 Thanks for using JHipster!
-```
-
+~~~
 
 ### 3. Sử dụng Docker (Cho người dùng nâng cao)
 
