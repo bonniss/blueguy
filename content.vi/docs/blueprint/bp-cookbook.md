@@ -40,9 +40,9 @@ jhipster --blueprints entity-audit
 
 ## Blueprint đang phát triển
 
-Với blueprint chưa xuất bản lên NPM, hoặc blueprint riêng tư chỉ chạy ở local, trong bước 1 ta không thể dùng `npm install -g` được.
+Với blueprint đang phát triển và chưa xuất bản lên NPM, hoặc blueprint riêng tư chỉ chạy ở local, ta không thể dùng `npm install -g` được.
 
-`npm` cho phép liên kết package local để sử dụng như một NPM package global, tại thư mục của blueprint, gọi [`npm link`](https://docs.npmjs.com/cli/v10/commands/npm-link) để tạo liên kết.
+`npm` cho phép liên kết package local để sử dụng như một NPM package global: tại thư mục của blueprint, gọi [`npm link`](https://docs.npmjs.com/cli/v10/commands/npm-link) để tạo liên kết.
 
 Bước 2 có một điểm khác: tùy chọn `--skip-jhipster-dependencies` là cần thiết để JHipster không thêm blueprint đang phát triển vào `dependencies` của code sinh ra:
 

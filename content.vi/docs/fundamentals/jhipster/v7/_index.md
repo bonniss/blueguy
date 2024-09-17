@@ -23,7 +23,7 @@ Người đọc tài liệu này sẽ làm việc với blueprint, do đó ta d�
 
 1. Cài Java 11 [Eclipse Temurin builds](https://adoptium.net/temurin/releases/?version=11)
 1. Cài Node.js LTS >= 14
-1. Cài JHipster: `npm install -g generator-jhipster`
+1. Cài JHipster: `npm install -g generator-jhipster@7`
 1. Cài Yeoman: `npm install -g yo`
 
 Kiểm tra cài đặt.
@@ -35,7 +35,6 @@ OpenJDK Runtime Environment Temurin-11.0.20.1+1 (build 11.0.20.1+1)
 OpenJDK Client VM Temurin-11.0.20.1+1 (build 11.0.20.1+1, mixed mode)
 
 $ jhipster --version
-INFO! Using bundled JHipster
 7.9.4
 
 $ yo --version

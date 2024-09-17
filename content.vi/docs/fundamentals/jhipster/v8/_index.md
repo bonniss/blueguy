@@ -35,12 +35,58 @@ OpenJDK Runtime Environment Temurin-17.0.10+7 (build 17.0.10+7)
 OpenJDK 64-Bit Server VM Temurin-17.0.10+7 (build 17.0.10+7, mixed mode, sharing)
 
 $ jhipster --version
-INFO! Using bundled JHipster
 8.1.0
 
 $ yo --version
-4.3.1
+5.0.0
 ```
+
+Khi `jhipster` đã được cài đặt, hiển thị tổng hợp thông tin môi trường phát triển:
+
+```sh
+$ jhipster info
+
+        ██╗ ██╗   ██╗ ████████╗ ███████╗   ██████╗ ████████╗ ████████╗ ███████╗
+        ██║ ██║   ██║ ╚══██╔══╝ ██╔═══██╗ ██╔════╝ ╚══██╔══╝ ██╔═════╝ ██╔═══██╗
+        ██║ ████████║    ██║    ███████╔╝ ╚█████╗     ██║    ██████╗   ███████╔╝
+  ██╗   ██║ ██╔═══██║    ██║    ██╔════╝   ╚═══██╗    ██║    ██╔═══╝   ██╔══██║
+  ╚██████╔╝ ██║   ██║ ████████╗ ██║       ██████╔╝    ██║    ████████╗ ██║  ╚██╗
+   ╚═════╝  ╚═╝   ╚═╝ ╚═══════╝ ╚═╝       ╚═════╝     ╚═╝    ╚═══════╝ ╚═╝   ╚═╝
+                            https://www.jhipster.tech
+Welcome to JHipster v8.6.0
+
+Welcome to the JHipster Information Sub-Generator
+
+
+```
+D:\works\@docs\blueguy
+└── (empty)
+```
+
+
+##### **JHipster configuration not found**
+
+
+##### **Environment and Tools**
+
+openjdk version "11.0.24" 2024-07-16
+OpenJDK Runtime Environment Temurin-11.0.24+8 (build 11.0.24+8)
+OpenJDK 64-Bit Server VM Temurin-11.0.24+8 (build 11.0.24+8, mixed mode)
+
+git version 2.37.0.windows.1
+
+node: v18.19.0
+npm: 10.2.3
+
+Docker version 26.1.1, build 4cf5afa
+WARNING! Current location doesn't contain a valid JHipster application
+
+Congratulations, JHipster execution is complete!
+If you find JHipster useful consider sponsoring the project https://www.jhipster.tech/sponsors/
+
+Thanks for using JHipster!
+```
+
 
 ### 3. Sử dụng Docker (Cho người dùng nâng cao)
 
