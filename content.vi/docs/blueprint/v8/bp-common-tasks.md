@@ -1,5 +1,5 @@
 ---
-weight: 4
+weight: 6
 title: "Tác vụ thường dùng"
 ---
 
@@ -12,65 +12,6 @@ title: "Tác vụ thường dùng"
 {{< hint info >}}
 Xem lại ["Làm việc với filesystem"](/docs/fundamentals/yeoman/filesystem) trong Yeoman.
 {{< /hint >}}
-
-## Thấu hiểu priority
-
-### Giữ nguyên hành vi của sub-generator cha
-
-```js
-get [BaseApplicationGenerator.INITIALIZING]() {
-  return super.initializing;
-}
-```
-
-### Override hoàn toàn sub-generator cha
-
-```js
-get [BaseApplicationGenerator.INITIALIZING]() {
-  return {
-    myCustomInitPriorityStep() {
-      // Do all your stuff here
-    },
-    myAnotherCustomInitPriorityStep(){
-      // Do all your stuff here
-    }
-  };
-}
-```
-
-### Override một phần sub-generator cha
-
-```js
-get [BaseApplicationGenerator.INITIALIZING]() {
-  return {
-    ...super._initializing(),
-    displayLogo() {
-        // override the displayLogo method from the initializing priority of JHipster
-    },
-    myCustomInitPriorityStep() {
-        // Do all your stuff here
-    },
-  };
-}
-```
-
-Hoặc có thể tùy biến logic rồi mới chuyển tiếp cho sub-generator cha xử lý:
-
-```js
-// Run the blueprint steps before and/or after any parent steps
-get initializing() {
-  return {
-    myCustomPreInitStep() {
-        // Stuff to do BEFORE the JHipster steps
-        // Eg: set name that will generate nameCapitalized, nameLowercase, etc.
-    }
-    ...super._initializing(),
-    myCustomPostInitStep() {
-        // Stuff to do AFTER the JHipster steps
-    }
-  };
-}
-```
 
 ## Mở rộng `package.json`
 
@@ -187,6 +128,27 @@ get [BaseApplicationGenerator.POST_WRITING_PRIORITY]() {
     },
   }
 }
+```
+
+## Thêm thuộc tính vào entity để dùng trong biểu mẫu
+
+```js
+get [BaseApplicationGenerator.POST_PREPARING_EACH_ENTITY]() {
+  return this.asPostPreparingEachEntityTaskGroup({
+    addDerivedField({ entity, entityName }) {
+      const { fields } = entity
+      entity.hasStatusField = fields.some(x => x.fieldName === 'status')
+    },
+  });
+}
+```
+
+Trong một biểu mẫu dành cho entity, ta có thể dùng `hasStatusField`:
+
+```ejs
+<%_ if (hasStatusField) { _%>
+  // This entity has status field
+<%_ } _%>
 ```
 
 ## Tham khảo

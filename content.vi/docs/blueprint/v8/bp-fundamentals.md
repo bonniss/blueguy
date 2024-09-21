@@ -1,9 +1,9 @@
 ---
 weight: 2
-title: "Chuẩn bị phát triển"
+title: "Hiểu biết tổng quan"
 ---
 
-# Chuẩn bị phát triển
+# Hiểu biết tổng quan
 
 {{< hint warning >}}
 **Phiên bản JHipster: 8.0.0**
@@ -54,7 +54,7 @@ flowchart LR
   end
 {{< /mermaid >}}
 
-> Danh sách đầy đủ các generator tại đường dẫn: `generators\generator-list.js`
+> Danh sách đầy đủ các generator tại: [`generators/generator-list.mjs`](https://github.com/jhipster/generator-jhipster/blob/32b2d93346e68106e43161009aa754b383a33d24/generators/generator-list.mjs#L20)
 
 Tổ tiên của mọi sub-generator là `YeomanGenerator`, nên _bạn có thể sử dụng API của Yeoman trong mọi sub-generator_.
 
