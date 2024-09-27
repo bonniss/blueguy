@@ -293,14 +293,45 @@ application {
   dto * with mapstruct
 }
 
+enum Status {
+  // 0. Chưa duyệt
+  PENDING_NEW ("0")
+  // 1. Đã duyệt
+  APPROVED_NEW ("1")
+  // 2. Sửa chờ duyệt
+  PENDING_EDIT ("2")
+  // 3. Đã sửa  (sửa đã duyệt)
+  APPROVED_EDIT ("3")
+  // 4. Xóa chờ duyệt
+  PENDING_DELETE ("4")
+  // 9. Đã xóa
+  APPROVED_DELETE ("9")
+}
+
+enum Gender {
+  MALE ("1"), FEMALE ("2")
+}
+
 entity Foo {
   fooName String
+  status Integer
+  gender Gender
+}
+
+enum Visibility {
+  ONLINE, OFFLINE
 }
 
 entity Bar {
-  barName String
-}
+  /**
+   * Custom annotation, tend to make different name for Id field
+   */
+  @Id
+  barId Long
 
+  barName String
+  visibility Visibility
+}
 relationship ManyToOne {
   Foo{bar} to Bar
 }
