@@ -318,20 +318,18 @@ entity Foo {
   gender Gender
 }
 
-enum Visibility {
+enum VisibilityStatus {
   ONLINE, OFFLINE
 }
 
 entity Bar {
-  /**
-   * Custom annotation, tend to make different name for Id field
-   */
   @Id
   barId Long
 
   barName String
-  visibility Visibility
+  visibility VisibilityStatus
 }
+
 relationship ManyToOne {
   Foo{bar} to Bar
 }
@@ -2174,10 +2172,7 @@ public class <%= entityClass %>Criteria implements Serializable, Criteria {
 
 ```js
 {
-  applications: [ 'acme' ],
-  changelogDate: '20240921173901',
-  dto: 'mapstruct',
-  entityTableName: 'bar',
+  name: 'Bar',
   fields: [
     {
       fieldName: 'barId',
@@ -2347,7 +2342,7 @@ public class <%= entityClass %>Criteria implements Serializable, Criteria {
     },
     {
       fieldName: 'visibility',
-      fieldType: 'Visibility',
+      fieldType: 'VisibilityStatus',
       fieldValues: 'ONLINE,OFFLINE',
       path: [Array],
       propertyName: 'visibility',
@@ -2356,10 +2351,10 @@ public class <%= entityClass %>Criteria implements Serializable, Criteria {
       fieldNameUnderscored: 'visibility',
       fieldNameHumanized: 'Visibility',
       fieldTranslationKey: 'acmeApp.bar.visibility',
-      tsType: 'Visibility',
+      tsType: 'VisibilityStatus',
       entity: [Circular *1],
       fieldIsEnum: true,
-      enumFileName: 'visibility',
+      enumFileName: 'visibility-status',
       enumValues: [Array],
       fieldWithContentType: false,
       fieldValidate: false,
@@ -2409,22 +2404,26 @@ public class <%= entityClass %>Criteria implements Serializable, Criteria {
       columnName: 'visibility',
       fieldInJavaBeanMethod: 'Visibility',
       fieldValidateRulesPatternJava: undefined,
-      javaFieldType: 'Visibility',
+      javaFieldType: 'VisibilityStatus',
       filterableField: true,
       fieldValidateRulesPatternAngular: undefined,
       fieldValidateRulesPatternReact: undefined,
       columnType: 'varchar(255)',
       shouldDropDefaultValue: false,
       shouldCreateContentType: false,
-      loadColumnType: 'string'
+      loadColumnType: 'string',
+      enumInstance: 'visibilityStatus'
     }
   ],
-  jpaMetamodelFiltering: true,
-  name: 'Bar',
-  pagination: 'pagination',
   relationships: [],
-  searchEngine: 'no',
+  entityTableName: 'bar',
+  dto: 'mapstruct',
+  pagination: 'pagination',
   service: 'serviceClass',
+  jpaMetamodelFiltering: true,
+  applications: [ 'acme' ],
+  changelogDate: '20240929005609',
+  searchEngine: 'no',
   otherRelationships: [
     {
       relationshipSide: 'left',
@@ -2558,7 +2557,7 @@ public class <%= entityClass %>Criteria implements Serializable, Criteria {
   enums: [],
   fieldNameChoices: [],
   differentRelationships: {},
-  changelogDateForRecent: 2024-09-21T17:39:01.000Z,
+  changelogDateForRecent: 2024-09-29T00:56:09.000Z,
   useMicroserviceJson: false,
   microserviceAppName: '',
   entityNameCapitalized: 'Bar',
@@ -2654,7 +2653,7 @@ public class <%= entityClass %>Criteria implements Serializable, Criteria {
       propertyApiDescription: [Getter],
       label: 'Visibility',
       name: 'visibility',
-      type: 'Visibility',
+      type: 'VisibilityStatus',
       nameCapitalized: 'Visibility',
       path: [Array]
     }
@@ -2678,11 +2677,119 @@ public class <%= entityClass %>Criteria implements Serializable, Criteria {
   workaroundInstantReactiveMariaDB: false,
   relationshipsContainOtherSideIgnore: false,
   importApiModelProperty: true,
-  uniqueEnums: { Visibility: 'Visibility' },
+  uniqueEnums: { VisibilityStatus: 'VisibilityStatus' },
   isUsingMapsId: false,
   mapsIdAssoc: null,
   reactiveOtherEntities: Set(0) {},
-  reactiveUniqueEntityTypes: Set(1) { 'Bar' }
+  reactiveUniqueEntityTypes: Set(1) { 'Bar' },
+  hasStatusField: false,
+  entityName: 'Bar',
+  anyRelationshipIsOwnerSide: false,
+  dtoReferences: [
+    {
+      id: true,
+      entity: [Circular *1],
+      field: [Object],
+      multiple: false,
+      owned: true,
+      doc: 'Custom annotation, tend to make different name for Id field',
+      propertyJavadoc: [Getter],
+      propertyApiDescription: [Getter],
+      label: 'Bar Id',
+      name: 'barId',
+      type: 'Long',
+      nameCapitalized: 'BarId',
+      path: [Array]
+    },
+    {
+      id: undefined,
+      entity: [Circular *1],
+      field: [Object],
+      multiple: false,
+      owned: true,
+      doc: undefined,
+      propertyJavadoc: [Getter],
+      propertyApiDescription: [Getter],
+      label: 'Bar Name',
+      name: 'barName',
+      type: 'String',
+      nameCapitalized: 'BarName',
+      path: [Array]
+    },
+    {
+      id: undefined,
+      entity: [Circular *1],
+      field: [Object],
+      multiple: false,
+      owned: true,
+      doc: undefined,
+      propertyJavadoc: [Getter],
+      propertyApiDescription: [Getter],
+      label: 'Visibility',
+      name: 'visibility',
+      type: 'VisibilityStatus',
+      nameCapitalized: 'Visibility',
+      path: [Array]
+    }
+  ],
+  otherReferences: [
+    {
+      id: undefined,
+      entity: [Object],
+      relationship: [Object],
+      owned: true,
+      collection: false,
+      doc: undefined,
+      propertyJavadoc: [Getter],
+      propertyApiDescription: [Getter],
+      name: 'bar',
+      nameCapitalized: 'Bar',
+      type: [Getter],
+      path: [Array],
+      relatedReference: [Object]
+    }
+  ],
+  otherDtoReferences: [
+    {
+      id: undefined,
+      entity: [Object],
+      relationship: [Object],
+      owned: true,
+      collection: false,
+      doc: undefined,
+      propertyJavadoc: [Getter],
+      propertyApiDescription: [Getter],
+      name: 'bar',
+      nameCapitalized: 'Bar',
+      type: [Getter],
+      path: [Array],
+      relatedReference: [Object]
+    }
+  ],
+  liquibaseFakeData: [
+    {
+      barId: 1,
+      barName: 'impanel instead blah',
+      visibility: 'OFFLINE'
+    },
+    { barId: 2, barName: 'jeer ugh', visibility: 'OFFLINE' },
+    {
+      barId: 3,
+      barName: 'scratch blah whoever',
+      visibility: 'OFFLINE'
+    },
+    { barId: 4, barName: 'athwart if gee', visibility: 'OFFLINE' },
+    { barId: 5, barName: 'whether', visibility: 'ONLINE' },
+    { barId: 6, barName: 'ick displace', visibility: 'ONLINE' },
+    { barId: 7, barName: 'readies time skid', visibility: 'OFFLINE' },
+    { barId: 8, barName: 'in antibody', visibility: 'ONLINE' },
+    { barId: 9, barName: 'overdraw', visibility: 'OFFLINE' },
+    {
+      barId: 10,
+      barName: 'pamper along before',
+      visibility: 'OFFLINE'
+    }
+  ]
 }
 ```
 
